@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Navbar, NavbarBrand, Nav, NavItem, NavLink, NavbarToggler, Collapse } from 'reactstrap';
-
+import "./Navbar.css";
+import Myicon from "../../assets/image/Mynavicon.png";
 
 
 
@@ -15,13 +16,15 @@ const Navigation = () => {
     };
 
     return (
-        <Navbar dark color='dark' expand="sm">
+        <Navbar light expand="sm" className="navbar-color">
             <div className="container">
                 <NavbarToggler onClick={toggle} />
+                <img src={Myicon} alt="myicon" width="80px" height="60px" className="nav-icon" />
 
                 <NavbarBrand href='/'>
                     My Gallery
             </NavbarBrand>
+
                 <Collapse isOpen={isOpen} navbar>
 
                     <Nav className="mr-auto" navbar>
