@@ -1,0 +1,2 @@
+export const LOADING_PHOTOS = "LOADING_PHOTOS";
+export const LOAD_PHOTOS = "LOAD_PHOTOS";

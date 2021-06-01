@@ -1,0 +1,19 @@
+{
+    "photos": [
+        {
+            "id": 1,
+            "name": "Nature_1",
+            "image": "Nature_1.png"
+        },
+        {
+            "id": 2,
+            "name": "Nature_2",
+            "image": "Nature_2.png"
+        },
+        {
+            "id": 3,
+            "name": "Nature_3",
+            "image": "Nature_3.png"
+        }
+    ]
+}
