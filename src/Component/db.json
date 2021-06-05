@@ -3,17 +3,65 @@
         {
             "id": 1,
             "name": "Nature_1",
-            "image": "Nature_1.png"
+            "image": "Nature_1.png",
+            "catagory": "nature",
+            "description": "Outside of the company types listed above, pictures and their descriptions can also be a great help to standard content marketing campaigns.  Finding any excuse to add some relevant content into your blogs and web pages is what you must do to create an advantage over your competitors. Adding image text can help your readers and optimize your blog posts."
         },
         {
             "id": 2,
             "name": "Nature_2",
-            "image": "Nature_2.png"
+            "image": "Nature_2.png",
+            "catagory": "nature",
+            "description": "Outside of the company types listed above, pictures and their descriptions can also be a great help to standard content marketing campaigns.  Finding any excuse to add some relevant content into your blogs and web pages is what you must do to create an advantage over your competitors. Adding image text can help your readers and optimize your blog posts."
         },
         {
             "id": 3,
             "name": "Nature_3",
-            "image": "Nature_3.png"
+            "image": "Nature_3.png",
+            "catagory": "nature",
+            "description": "Outside of the company types listed above, pictures and their descriptions can also be a great help to standard content marketing campaigns.  Finding any excuse to add some relevant content into your blogs and web pages is what you must do to create an advantage over your competitors. Adding image text can help your readers and optimize your blog posts."
+        },
+        {
+            "id": 4,
+            "name": "Tech_1",
+            "image": "Tech_1.png",
+            "catagory": "technology",
+            "description": "Outside of the company types listed above, pictures and their descriptions can also be a great help to standard content marketing campaigns.  Finding any excuse to add some relevant content into your blogs and web pages is what you must do to create an advantage over your competitors. Adding image text can help your readers and optimize your blog posts."
+        },
+        {
+            "id": 5,
+            "name": "Tech_2",
+            "image": "Tech_2.png",
+            "catagory": "technology",
+            "description": "Outside of the company types listed above, pictures and their descriptions can also be a great help to standard content marketing campaigns.  Finding any excuse to add some relevant content into your blogs and web pages is what you must do to create an advantage over your competitors. Adding image text can help your readers and optimize your blog posts."
+        },
+        {
+            "id": 6,
+            "name": "Tech_3",
+            "image": "Tech_3.png",
+            "catagory": "technology",
+            "description": "Outside of the company types listed above, pictures and their descriptions can also be a great help to standard content marketing campaigns.  Finding any excuse to add some relevant content into your blogs and web pages is what you must do to create an advantage over your competitors. Adding image text can help your readers and optimize your blog posts."
+        },
+        {
+            "id": 7,
+            "name": "Bird_1",
+            "image": "Bird_1.png",
+            "catagory": "birds",
+            "description": "Outside of the company types listed above, pictures and their descriptions can also be a great help to standard content marketing campaigns.  Finding any excuse to add some relevant content into your blogs and web pages is what you must do to create an advantage over your competitors. Adding image text can help your readers and optimize your blog posts."
+        },
+        {
+            "id": 8,
+            "name": "Bird_2",
+            "image": "Bird_2.png",
+            "catagory": "birds",
+            "description": "Outside of the company types listed above, pictures and their descriptions can also be a great help to standard content marketing campaigns.  Finding any excuse to add some relevant content into your blogs and web pages is what you must do to create an advantage over your competitors. Adding image text can help your readers and optimize your blog posts."
+        },
+        {
+            "id": 9,
+            "name": "Bird_3",
+            "image": "Bird_3.png",
+            "catagory": "birds",
+            "description": "Outside of the company types listed above, pictures and their descriptions can also be a great help to standard content marketing campaigns.  Finding any excuse to add some relevant content into your blogs and web pages is what you must do to create an advantage over your competitors. Adding image text can help your readers and optimize your blog posts."
         }
     ]
 }

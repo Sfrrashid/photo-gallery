@@ -1,9 +1,8 @@
 import React from 'react';
-import Home from '../Component/Home/Home';
-import Gallery from '../Component/Gallery/Gallery';
-import SignUp from "../Component/SignUp/SignUp";
-import Login from "../Component/Login/Login";
-import Logout from "../Component/Logout/Logout";
+
+import Navigation from '../Component/Home/Navigation';
+
+import Body from "../Component/Body/Body";
 
 
 
@@ -12,11 +11,9 @@ const MainComponent = () => {
 
     return (
         <div>
-            <Home />
-            <Gallery />
-            <SignUp />
-            <Login />
-            <Logout />
+            <Navigation />
+
+            <Body />
 
 
         </div>

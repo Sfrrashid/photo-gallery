@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Navbar, NavbarBrand, Nav, NavItem, NavLink, NavbarToggler, Collapse } from 'reactstrap';
+import { Navbar, NavbarBrand, Nav, NavItem, NavbarToggler, Collapse } from 'reactstrap';
 import "./Navbar.css";
 import Myicon from "../../assets/image/Mynavicon.png";
+import { NavLink } from 'react-router-dom';
 
 
 
@@ -29,19 +30,19 @@ const Navigation = () => {
 
                     <Nav className="mr-auto" navbar>
                         <NavItem>
-                            <NavLink href="/" active>Home</NavLink>
+                            <NavLink to="/" exact className="nav-link active">Home</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/gallery">Gallery</NavLink>
+                            <NavLink to="/gallery" exact className="nav-link">Gallery</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/SignUp">SignUp</NavLink>
+                            <NavLink to="/signup" className="nav-link">SignUp</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/Login">Login</NavLink>
+                            <NavLink to="/login" className="nav-link">Login</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/Logout">Logout</NavLink>
+                            <NavLink to="/logout" className="nav-link">Logout</NavLink>
                         </NavItem>
 
 
