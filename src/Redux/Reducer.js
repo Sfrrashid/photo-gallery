@@ -1,6 +1,53 @@
 import * as actiontypes from "./Actiontypes";
 import { combineReducers } from 'redux';
 
+const Auth_Initial = {
+    Auth_Loading: false,
+    Auth_Msg: null,
+    userId: null,
+    token: null,
+}
+
+export const authReducer = (authState = Auth_Initial, action) => {
+
+    switch (action.type) {
+
+        case (actiontypes.LOADING_AUTH):
+
+            return {
+                ...authState,
+                Auth_Loading: action.payload
+
+            }
+
+        case (actiontypes.LOAD_AUTH):
+
+            return {
+                ...authState,
+                token: action.payload.token,
+                userId: action.payload.userId
+
+            }
+
+        case (actiontypes.AUTH_FAILED):
+
+            return {
+                ...authState,
+                Auth_Msg: action.payload
+
+            }
+        default:
+            return authState;
+    }
+
+
+
+
+
+
+
+}
+
 
 export const photoReducer = (photoState = { isLoading: false, photos: [] }, action) => {
 
@@ -60,6 +107,7 @@ export const commentReducer = (commentState = { isLoading: false, comments: [] }
 export const reducer = combineReducers({
 
     photos: photoReducer,
-    comments: commentReducer
+    comments: commentReducer,
+    auth: authReducer
 
 })

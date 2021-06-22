@@ -40,6 +40,7 @@ export const Load_comments = (comments) => {
 }
 
 
+
 export const FetchPhotos = () => dispatch => {
 
     dispatch(Loading_photos());
