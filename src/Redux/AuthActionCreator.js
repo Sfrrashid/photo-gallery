@@ -11,7 +11,7 @@ export const auth_Loading = isLoading => {
     }
 }
 
-export const auth_Load = (userId, token) => {
+export const auth_Load = (token, userId) => {
 
     return {
         type: actionTypes.LOAD_AUTH,
@@ -53,8 +53,12 @@ export const auth = (email, password, passwordConfirm) => dispatch => {
     axios.post(Url_signUp + API_KEY_signUp, auth_signup)
         .then(response => {
             dispatch(auth_Loading(false))
+            localStorage.setItem('token', response.data.idToken);
+            localStorage.setItem('userId', response.data.localId);
+            const expirationTime = new Date(new Date().getTime() + response.data.expiresIn * 1000);
+            localStorage.setItem('expirationTime', expirationTime);
             console.log(response)
-            dispatch(auth_Load(response.data))
+            dispatch(auth_Load(response.data.idToken, response.data.localId))
 
 
         })
@@ -92,8 +96,12 @@ export const auth_login = (email, password) => dispatch => {
     axios.post(Url_auth + API_KEY_signIn, auth_login)
         .then(response => {
             dispatch(auth_Loading(false))
+            localStorage.setItem('token', response.data.idToken);
+            localStorage.setItem('userId', response.data.localId);
+            const expirationTime = new Date(new Date().getTime() + response.data.expiresIn * 1000);
+            localStorage.setItem('expirationTime', expirationTime);
             console.log(response)
-            dispatch(auth_Load(response.data))
+            dispatch(auth_Load(response.data.idToken, response.data.localId))
 
 
         })
@@ -104,5 +112,17 @@ export const auth_login = (email, password) => dispatch => {
 
         })
 
+
+}
+
+export const logout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('userId');
+    localStorage.removeItem('expirationTime');
+
+    return {
+        type: actionTypes.AUTH_LOGOUT
+
+    }
 
 }

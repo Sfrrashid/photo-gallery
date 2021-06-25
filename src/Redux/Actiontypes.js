@@ -5,4 +5,6 @@ export const LOAD_COMMENTS = "LOAD_COMMENTS";
 export const LOADING_AUTH = "LOADING_AUTH";
 export const LOAD_AUTH = "LOAD_AUTH";
 export const AUTH_FAILED = "AUTH_FAILED";
+export const AUTH_LOGOUT = "AUTH_LOGOUT";
+export const ADD_COMMENT = "ADD_COMMENT";
 

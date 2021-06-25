@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const LoadComments = (props) => {
     if (props.commentisLoading) {
         return (
@@ -15,6 +16,9 @@ const LoadComments = (props) => {
                         <h5>{comment.author}</h5>
                         <p>{comment.comment}</p>
                         <p>{comment.rating}</p>
+
+
+
 
                     </div>
                 );

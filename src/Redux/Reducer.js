@@ -4,15 +4,16 @@ import { combineReducers } from 'redux';
 const Auth_Initial = {
     Auth_Loading: false,
     Auth_Msg: null,
-    userId: null,
     token: null,
+    userId: null,
+
 }
 
 export const authReducer = (authState = Auth_Initial, action) => {
 
     switch (action.type) {
 
-        case (actiontypes.LOADING_AUTH):
+        case actiontypes.LOADING_AUTH:
 
             return {
                 ...authState,
@@ -20,7 +21,7 @@ export const authReducer = (authState = Auth_Initial, action) => {
 
             }
 
-        case (actiontypes.LOAD_AUTH):
+        case actiontypes.LOAD_AUTH:
 
             return {
                 ...authState,
@@ -29,11 +30,19 @@ export const authReducer = (authState = Auth_Initial, action) => {
 
             }
 
-        case (actiontypes.AUTH_FAILED):
+        case actiontypes.AUTH_FAILED:
 
             return {
                 ...authState,
                 Auth_Msg: action.payload
+
+            }
+
+        case actiontypes.AUTH_LOGOUT:
+            return {
+                ...authState,
+                userId: null,
+                token: null,
 
             }
         default:

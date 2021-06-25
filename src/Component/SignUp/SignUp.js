@@ -9,7 +9,7 @@ import { auth } from '../../Redux/AuthActionCreator';
 
 
 const mapstateToProps = (state) => {
-    console.log(state.auth.Auth_Msg)
+    console.log(state)
     return {
         Auth_Loading: state.auth.Auth_Loading,
         Auth_Msg: state.auth.Auth_Msg
@@ -102,6 +102,7 @@ const SignUp = props => {
                         border: "1px grey solid",
                         padding: "15px",
                         borderRadius: "7px",
+                        backgroundColor: "violet"
 
                     }}>
                         <strong> if you have an account then <Button onClick={loginView} color="link">click here</Button> for login
@@ -113,7 +114,9 @@ const SignUp = props => {
                         <br />
 
                         <form onSubmit={handleSubmit}>
+
                             <input
+
 
 
                                 name="email"
