@@ -99,11 +99,28 @@ export const commentReducer = (commentState = { isLoading: false, comments: [] }
 
 
         case actiontypes.LOAD_COMMENTS:
+
             return {
                 ...commentState,
                 isLoading: false,
                 comments: action.payload
             }
+
+        case actiontypes.ADD_COMMENT:
+            let comment = action.payload;
+
+            return {
+                ...commentState,
+                comments: commentState.comments.concat(comment)
+
+            }
+
+
+
+
+
+
+
 
         default:
             return commentState;

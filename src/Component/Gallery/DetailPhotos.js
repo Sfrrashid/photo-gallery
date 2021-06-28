@@ -5,7 +5,7 @@ import CommentForm from './CommentForm';
 
 
 const PhotoDetails = props => {
-    console.log(props)
+    // console.log(props)
     return (
         <div>
             <Card style={{ margin: "10px" }}>
@@ -21,7 +21,8 @@ const PhotoDetails = props => {
                     <hr />
                     <LoadComments comments={props.comments} commentisLoading={props.commentisLoading} />
                     <hr />
-                    <CommentForm />
+                    <CommentForm picId={props.photos.id} Add_Comment={props.Add_Comment}
+                        uid={props.uid} />
 
 
                 </CardBody>

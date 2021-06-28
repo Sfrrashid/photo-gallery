@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import { Form, Input, Button, Label } from 'reactstrap';
 
-const CommentForm = () => {
+const CommentForm = (props) => {
     const [author, setAuthor] = useState('')
-    const [rating, setRating] = useState('')
+
     const [comment, setComment] = useState('')
+    const [rating, setRating] = useState('')
 
     const handleSubmit = e => {
+        console.log(props)
+
+        props.Add_Comment(props.picId, author, comment, rating, props.uid);
         // console.log(author);
 
         setAuthor({
@@ -43,7 +47,24 @@ const CommentForm = () => {
             <br />
             <br />
 
-            <Label>Rating</Label>
+            <Label>feedback</Label>
+
+            <Input
+
+                style={{ marginTop: "10px" }}
+                type='textarea'
+                name='comment'
+                value={comment}
+                placeholder='feedback here....'
+                onChange={e => setComment(e.target.value)}
+                required />
+
+            <br />
+            <br />
+
+            <Label>rating</Label>
+
+
             <Input
 
                 style={{ marginTop: "10px" }}
@@ -60,20 +81,11 @@ const CommentForm = () => {
 
             </Input>
 
-            <br />
-            <br />
 
-            <Label>feedback</Label>
 
-            <Input
 
-                style={{ marginTop: "10px" }}
-                type='textarea'
-                name='comment'
-                value={comment}
-                placeholder='feedback here....'
-                onChange={e => setComment(e.target.value)}
-                required />
+
+
 
             <Button type='submit' className='btn btn-info' style={{ "marginTop": "10px" }}>Add Comment</Button>
 

@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import { FetchPhotos, FetchComments } from '../../Redux/Actioncreator';
+import { FetchPhotos, FetchComments, Add_Comment } from '../../Redux/Actioncreator';
 import PhotoGallery from '../Gallery/PhotoGallery';
 import PhotoDetails from '../Gallery/DetailPhotos';
+
 import { CardColumns, Modal, ModalBody, ModalFooter, Button } from 'reactstrap';
 
 
 const mapStateToProps = (state) => {
-    //console.log(state.comments.comments.comments);
+    console.log(state);
 
     return {
         photos: state.photos,
@@ -18,7 +19,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => {
     return {
 
-
+        Add_Comment: (picId, author, comment, rating, uid) => dispatch(Add_Comment(picId, author, comment, rating, uid)),
         FetchPhotos: () => dispatch(FetchPhotos()),
         FetchComments: () => dispatch(FetchComments())
 
@@ -35,6 +36,9 @@ const mapDispatchToProps = dispatch => {
 
 
 const Gallery = (props) => {
+    let a = props.comments.comments.length;
+    console.log(a);
+
     const [modal, setModal] = useState(false);
     const toggle = () => {
         setModal(!modal)
@@ -55,6 +59,8 @@ const Gallery = (props) => {
 
         props.FetchPhotos();
         props.FetchComments();
+
+
 
     }, [])
 
@@ -87,11 +93,13 @@ const Gallery = (props) => {
 
         let photobody = null;
         if (image != null) {
-            const comments = props.comments.comments.comments.filter(comment => comment.picId === image.id
+            const comments = props.comments.comments.filter(comment => comment.picId === image.id
             )
 
             photobody = <PhotoDetails photos={image}
                 comments={comments}
+                uid={props.comments.comments.length}
+                Add_Comment={props.Add_Comment}
                 commentisLoading={props.comments.isLoading} />
 
         }

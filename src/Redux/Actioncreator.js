@@ -39,6 +39,45 @@ export const Load_comments = (comments) => {
 
 }
 
+export const commentfield = comment => {
+    return {
+        type: actionTypes.ADD_COMMENT,
+        payload: comment
+    }
+}
+
+
+export const Add_Comment = (picId, author, comment, rating, uid) => dispatch => {
+    const newComment = {
+        picId: picId,
+        author: author,
+        id: uid,
+        comment: comment,
+        rating: rating
+    }
+
+    newComment.date = new Date().toISOString();
+
+    let Url = `https://photo-gallery-dcfe1-default-rtdb.firebaseio.com/comments/${uid}.json`
+
+    axios.patch(Url, newComment)
+        .then(response => {
+            console.log(response)
+            console.log(response.data)
+            console.log(typeof (response.data))
+            console.log(Array.isArray(response.data))
+
+
+            dispatch(commentfield(response.data))
+
+
+        })
+
+
+
+
+
+}
 
 
 export const FetchPhotos = () => dispatch => {
@@ -50,6 +89,7 @@ export const FetchPhotos = () => dispatch => {
     axios.get("https://photo-gallery-dcfe1-default-rtdb.firebaseio.com/photos.json")
         .then(response => {
             dispatch(Load_photos(response.data))
+
         })
         .catch(err => console.log(err.message));
 
@@ -63,6 +103,7 @@ export const FetchComments = () => dispatch => {
     axios.get("https://photo-gallery-dcfe1-default-rtdb.firebaseio.com/comments.json")
         .then(response => {
             dispatch(Load_comments(response.data))
+
         })
         .catch(err => console.log(err.message));
 
