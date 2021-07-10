@@ -4,8 +4,12 @@ import LoadComments from '../Gallery/LoadComments';
 import CommentForm from './CommentForm';
 
 
+
+
+
 const PhotoDetails = props => {
-    // console.log(props)
+    console.log(props);
+    const token = props.token
     return (
         <div>
             <Card style={{ margin: "10px" }}>
@@ -19,10 +23,13 @@ const PhotoDetails = props => {
                         {props.photos.description}
                     </CardText>
                     <hr />
+
+
                     <LoadComments comments={props.comments} commentisLoading={props.commentisLoading} />
                     <hr />
-                    <CommentForm picId={props.photos.id} Add_Comment={props.Add_Comment}
-                        uid={props.uid} />
+                    {token === null ? <p style={{ textAlign: 'center' }}> <strong>Please SignUp or Login for for Add some feedback here !</strong></p> : <CommentForm picId={props.photos.id} Add_Comment={props.Add_Comment}
+                        uid={props.uid} />}
+
 
 
                 </CardBody>

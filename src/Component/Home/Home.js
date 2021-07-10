@@ -36,7 +36,7 @@ const Home = () => {
         <div>
 
 
-            <img src={img} alt="img" width='100%' height='auto' />
+            <img src={img} alt="img" width='100%' height='100%' />
 
         </div>
     );

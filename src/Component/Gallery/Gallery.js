@@ -12,7 +12,8 @@ const mapStateToProps = (state) => {
 
     return {
         photos: state.photos,
-        comments: state.comments
+        comments: state.comments,
+        auth: state.auth
     }
 
 }
@@ -36,8 +37,8 @@ const mapDispatchToProps = dispatch => {
 
 
 const Gallery = (props) => {
-    let a = props.comments.comments.length;
-    console.log(a);
+
+    console.log(props.auth.token);
 
     const [modal, setModal] = useState(false);
     const toggle = () => {
@@ -61,7 +62,7 @@ const Gallery = (props) => {
         props.FetchComments();
 
 
-
+        // eslint-disable-next-line
     }, [])
 
 
@@ -99,6 +100,7 @@ const Gallery = (props) => {
             photobody = <PhotoDetails photos={image}
                 comments={comments}
                 uid={props.comments.comments.length}
+                token={props.auth.token}
                 Add_Comment={props.Add_Comment}
                 commentisLoading={props.comments.isLoading} />
 

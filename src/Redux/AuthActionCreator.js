@@ -126,3 +126,28 @@ export const logout = () => {
     }
 
 }
+
+export const Authcheck = () => dispatch => {
+    const token = localStorage.getItem('token')
+    if (!token) {
+        dispatch(logout());
+    }
+    else {
+        const expirationTime = new Date(localStorage.getItem('expirationTime'))
+        if (expirationTime <= new Date()) {
+            dispatch(logout());
+        } else {
+            const userId = localStorage.getItem('userId')
+            dispatch(auth_Load(token, userId))
+        }
+
+    }
+
+
+
+
+
+
+
+
+}
